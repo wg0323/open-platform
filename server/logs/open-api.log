@@ -1,0 +1,278 @@
+2026-10-21 14:32:06.783 [background-preinit] INFO  [] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2026-10-21 14:32:06.786 [main] INFO  [] com.bike.openapi.OpenApiApplication - Starting OpenApiApplication using Java 1.8.0_431 on DESKTOP-72RD6OV with PID 17636 (D:\MyProducts\open-api\server\target\classes started by admin in D:\MyProducts\open-api\server)
+2026-10-21 14:32:06.787 [main] INFO  [] com.bike.openapi.OpenApiApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-21 14:32:07.336 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-21 14:32:07.337 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-21 14:32:07.354 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2026-10-21 14:32:08.136 [main] INFO  [] o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 18080 (http)
+2026-10-21 14:32:08.140 [main] INFO  [] o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-18080"]
+2026-10-21 14:32:08.141 [main] INFO  [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-21 14:32:08.141 [main] INFO  [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-10-21 14:32:08.276 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-21 14:32:08.276 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1465 ms
+2026-10-21 14:32:08.474 [main] ERROR [] o.s.b.web.embedded.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter' defined in file [D:\MyProducts\open-api\server\target\classes\com\bike\openapi\admin\auth\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenBlacklistService' defined in file [D:\MyProducts\open-api\server\target\classes\com\bike\openapi\admin\auth\TokenBlacklistService.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.bike.openapi.admin.auth.TokenBlacklistService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The Java feature 'Flexible Constructor Bodies' is only available with source level 25 and above
+
+2026-10-21 14:32:08.485 [main] INFO  [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-10-21 14:32:08.487 [main] WARN  [] o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-timer-3-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ io.netty.util.HashedWheelTimer$Worker.waitForNextTick(HashedWheelTimer.java:600)
+ io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:496)
+ io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-21 14:32:08.488 [main] WARN  [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2026-10-21 14:32:08.503 [main] INFO  [] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-10-21 14:32:08.514 [main] ERROR [] o.springframework.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:585)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
+	at com.bike.openapi.OpenApiApplication.main(OpenApiApplication.java:17)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:481)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter' defined in file [D:\MyProducts\open-api\server\target\classes\com\bike\openapi\admin\auth\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenBlacklistService' defined in file [D:\MyProducts\open-api\server\target\classes\com\bike\openapi\admin\auth\TokenBlacklistService.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.bike.openapi.admin.auth.TokenBlacklistService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The Java feature 'Flexible Constructor Bodies' is only available with source level 25 and above
+
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:176)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:171)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:156)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4904)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:794)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:248)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:921)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:489)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenBlacklistService' defined in file [D:\MyProducts\open-api\server\target\classes\com\bike\openapi\admin\auth\TokenBlacklistService.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.bike.openapi.admin.auth.TokenBlacklistService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The Java feature 'Flexible Constructor Bodies' is only available with source level 25 and above
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:310)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:291)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.bike.openapi.admin.auth.TokenBlacklistService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The Java feature 'Flexible Constructor Bodies' is only available with source level 25 and above
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:226)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:306)
+	... 68 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	The Java feature 'Flexible Constructor Bodies' is only available with source level 25 and above
+
+	at com.bike.openapi.admin.auth.TokenBlacklistService.<init>(TokenBlacklistService.java:13)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:213)
+	... 70 common frames omitted
+2026-10-21 14:32:59.953 [background-preinit] INFO  [] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2026-10-21 14:32:59.956 [main] INFO  [] com.bike.openapi.OpenApiApplication - Starting OpenApiApplication using Java 1.8.0_431 on DESKTOP-72RD6OV with PID 22408 (D:\MyProducts\open-api\server\target\classes started by admin in D:\MyProducts\open-api\server)
+2026-10-21 14:32:59.957 [main] INFO  [] com.bike.openapi.OpenApiApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-21 14:33:00.497 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-21 14:33:00.499 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-21 14:33:00.515 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2026-10-21 14:33:01.313 [main] INFO  [] o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 18080 (http)
+2026-10-21 14:33:01.318 [main] INFO  [] o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-18080"]
+2026-10-21 14:33:01.319 [main] INFO  [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-21 14:33:01.319 [main] INFO  [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-10-21 14:33:01.456 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-21 14:33:01.457 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1477 ms
+2026-10-21 14:33:02.574 [main] INFO  [] o.s.s.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/admin/api/**'] with [org.springframework.security.web.session.DisableEncodeUrlFilter@78bad03b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26101efc, org.springframework.security.web.context.SecurityContextPersistenceFilter@68a5aadd, org.springframework.security.web.header.HeaderWriterFilter@147c00aa, com.bike.openapi.admin.auth.JwtAuthenticationFilter@3ee6dc82, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a89414e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17f8db6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e2109fe, org.springframework.security.web.session.SessionManagementFilter@4db728df, org.springframework.security.web.access.ExceptionTranslationFilter@254e9709, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1857fe6c]
+2026-10-21 14:33:02.579 [main] INFO  [] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@191e654, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a6556b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@3e04abc5, org.springframework.security.web.header.HeaderWriterFilter@393ae7a0, org.springframework.security.web.authentication.logout.LogoutFilter@7e4ac598, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1008df1e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ee12d58, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63bca84d, org.springframework.security.web.session.SessionManagementFilter@63326a3a, org.springframework.security.web.access.ExceptionTranslationFilter@4aac81ca, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@580ffea]
+2026-10-21 14:33:02.892 [main] INFO  [] o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+2026-10-21 14:33:02.913 [main] INFO  [] o.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-18080"]
+2026-10-21 14:33:02.925 [main] INFO  [] o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 18080 (http) with context path ''
+2026-10-21 14:33:02.936 [main] INFO  [] com.bike.openapi.OpenApiApplication - Started OpenApiApplication in 3.23 seconds (JVM running for 3.526)
+2026-10-21 14:33:33.376 [http-nio-18080-exec-2] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-21 14:33:33.376 [http-nio-18080-exec-2] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-21 14:33:33.377 [http-nio-18080-exec-2] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-10-21 14:33:33.431 [http-nio-18080-exec-2] INFO  [06594182571b4effbfd34ba1c9fa1fd1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-21 14:33:33.590 [http-nio-18080-exec-2] INFO  [06594182571b4effbfd34ba1c9fa1fd1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-21 14:33:34.905 [http-nio-18080-exec-6] WARN  [b5bb616b751e4e4d9f892dbf244be899] com.bike.openapi.security.ApiAuthFilter - 签名校验失败 appKey=sbike_demo path=/api/v3/fences
+2026-10-21 14:41:05.383 [background-preinit] INFO  [] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2026-10-21 14:41:05.386 [main] INFO  [] com.bike.openapi.OpenApiApplication - Starting OpenApiApplication using Java 1.8.0_431 on DESKTOP-72RD6OV with PID 21092 (D:\MyProducts\open-api\server\target\classes started by admin in D:\MyProducts\open-api\server)
+2026-10-21 14:41:05.387 [main] INFO  [] com.bike.openapi.OpenApiApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-21 14:41:05.925 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-21 14:41:05.926 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-21 14:41:05.943 [main] INFO  [] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2026-10-21 14:41:06.697 [main] INFO  [] o.s.b.w.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 18080 (http)
+2026-10-21 14:41:06.701 [main] INFO  [] o.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-18080"]
+2026-10-21 14:41:06.702 [main] INFO  [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-21 14:41:06.702 [main] INFO  [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-10-21 14:41:06.833 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-21 14:41:06.834 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1425 ms
+2026-10-21 14:41:07.026 [main] ERROR [] o.s.b.web.embedded.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter' defined in file [D:\MyProducts\open-api\server\target\classes\com\bike\openapi\admin\auth\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenBlacklistService' defined in file [D:\MyProducts\open-api\server\target\classes\com\bike\openapi\admin\auth\TokenBlacklistService.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.bike.openapi.admin.auth.TokenBlacklistService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The Java feature 'Flexible Constructor Bodies' is only available with source level 25 and above
+
+2026-10-21 14:41:07.037 [main] INFO  [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-10-21 14:41:07.038 [main] WARN  [] o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [lettuce-timer-3-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ io.netty.util.HashedWheelTimer$Worker.waitForNextTick(HashedWheelTimer.java:600)
+ io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:496)
+ io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ java.lang.Thread.run(Thread.java:750)
+2026-10-21 14:41:07.039 [main] WARN  [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2026-10-21 14:41:07.054 [main] INFO  [] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-10-21 14:41:07.064 [main] ERROR [] o.springframework.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:585)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
+	at com.bike.openapi.OpenApiApplication.main(OpenApiApplication.java:17)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:481)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter' defined in file [D:\MyProducts\open-api\server\target\classes\com\bike\openapi\admin\auth\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenBlacklistService' defined in file [D:\MyProducts\open-api\server\target\classes\com\bike\openapi\admin\auth\TokenBlacklistService.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.bike.openapi.admin.auth.TokenBlacklistService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The Java feature 'Flexible Constructor Bodies' is only available with source level 25 and above
+
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:176)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:171)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:156)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4904)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:794)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:248)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:921)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:489)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenBlacklistService' defined in file [D:\MyProducts\open-api\server\target\classes\com\bike\openapi\admin\auth\TokenBlacklistService.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.bike.openapi.admin.auth.TokenBlacklistService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The Java feature 'Flexible Constructor Bodies' is only available with source level 25 and above
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:310)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:291)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.bike.openapi.admin.auth.TokenBlacklistService]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The Java feature 'Flexible Constructor Bodies' is only available with source level 25 and above
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:226)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:306)
+	... 68 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	The Java feature 'Flexible Constructor Bodies' is only available with source level 25 and above
+
+	at com.bike.openapi.admin.auth.TokenBlacklistService.<init>(TokenBlacklistService.java:13)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:213)
+	... 70 common frames omitted

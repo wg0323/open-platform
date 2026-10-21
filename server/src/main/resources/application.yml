@@ -1,0 +1,68 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: sbike-open-api
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/sbike_openapi?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 3000ms
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+knife4j:
+  enable: true
+
+openapi:
+  security:
+    timestamp-window-seconds: 300
+    nonce-ttl-seconds: 600
+    ip-whitelist-enabled: false
+    max-body-bytes: 1048576
+  rate-limit:
+    enabled: true
+    ip-qps: 100
+  metrics:
+    window-seconds: 60
+    latency-samples: 1024
+    retention-days: 7
+
+admin:
+  jwt:
+    secret: sbike-open-api-admin-jwt-secret-please-change-in-production-2026
+    expire-hours: 8
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always

@@ -1,0 +1,34 @@
+package com.bike.openapi.admin.auth;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
+import com.bike.openapi.common.ApiResult;
+import com.bike.openapi.common.ErrorCode;
+import org.springframework.http.MediaType;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.stereotype.Component;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
+/**
+ * 已登录但无权限时返回统一 JSON。
+ */
+@Component
+@RequiredArgsConstructor
+public class RestAccessDeniedHandler implements AccessDeniedHandler {
+
+    private final ObjectMapper objectMapper;
+
+    @Override
+    public void handle(HttpServletRequest request, HttpServletResponse response,
+                       AccessDeniedException exception) throws IOException {
+        response.setStatus(ErrorCode.FORBIDDEN.getHttpStatus());
+        response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+        response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+        response.getWriter().write(objectMapper.writeValueAsString(ApiResult.fail(ErrorCode.FORBIDDEN)));
+    }
+}

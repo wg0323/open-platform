@@ -1,0 +1,6 @@
+/.vscode
+/api
+/docs/*
+!/docs/images/
+/logs
+*/target
