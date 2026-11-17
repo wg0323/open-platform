@@ -36,7 +36,8 @@ open-api/
 ├── api/openapi.json         对外接口的 OpenAPI 3 描述（由服务导出，纳入版本管理）
 ├── db/schema.sql            建库建表与演示数据（含管理后台 RBAC，幂等可重复执行）
 ├── scripts/                 dump-openapi / gen-sdk / smoke-test
-└── docs/                    原始规范、旧代码与设计文档
+├── assets/                  README 引用的截图
+└── docs/                    原始规范、旧代码与设计文档（本地留存，不纳入版本管理）
 ```
 
 ## 环境要求
@@ -153,15 +154,15 @@ METHOD + LF + PATH + LF + 规范化query + LF + timestamp + LF + nonce + LF + ba
 
 登录页：图形验证码 + 账号密码，首次登录强制改密。
 
-![登录页](docs/images/admin-login.png)
+![登录页](assets/admin-login.png)
 
 接入方管理：按企业名称、编码或 appKey 搜索，支持启停、重置密钥与查看密钥。
 
-![接入方管理](docs/images/admin-apps.png)
+![接入方管理](assets/admin-apps.png)
 
 指标看板：上半部分是 60 秒窗口的实时快照，下半部分是分钟级历史趋势，可切换近 1 小时到近 7 天，以及请求数、错误率、P99 三种指标。
 
-![指标看板](docs/images/admin-metrics.png)
+![指标看板](assets/admin-metrics.png)
 
 ## Java SDK
 
@@ -197,7 +198,7 @@ new OrderApi(client).createOrder(idempotencyKey, order);
 
 | 交付物 | 形式 | 来源 |
 |---|---|---|
-| 《共享自行车接口规范 v3.0》 | 对外发 PDF，内部留 Word 源文件 | `docs/共享自行车接口规范v3.0.docx` |
+| 《共享自行车接口规范 v3.0》 | 对外发 PDF，内部留 Word 源文件 | Word 源文件仅本地留存，不进版本库 |
 | 接口描述文件 | `openapi.json` | `api/openapi.json`，用 `scripts\dump-openapi.bat` 从运行中的服务导出 |
 | Java SDK | jar + 源码 + 调用示例 | `sdk-java/` |
 | 接入凭证 | appKey、appSecret、环境地址、QPS 配额 | 管理后台「接入方管理」创建 |
